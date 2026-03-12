@@ -1,0 +1,20 @@
+services:
+  # Backend Express Server
+  backend:
+    build: ./backend
+    image: ats_backend
+    container_name: ats_backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./backend/.env
+
+  # Frontend React App (Vite)
+  frontend:
+    build: ./frontend
+    image: ats_frontend
+    container_name: ats_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
