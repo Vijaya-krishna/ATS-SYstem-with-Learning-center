@@ -38,3 +38,6 @@ logs
 
 # Docker
 .dockerignore
+
+backend/uploads/
+*.pdf
